@@ -1,0 +1,33 @@
+{
+  "name": "go-wasm",
+  "version": "1.0.0",
+  "description": "A demo project of golang wasm.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cross-env GOOS=js GOARCH=wasm go build -o ./test/main.wasm main.go",
+    "build:tiny": "tinygo build -o ./test/main_tiny.wasm -target=wasm main.go",
+    "test:browser": "http-server -o /test/index.html",
+    "test:browser:tiny": "http-server -o /test/tiny.html",
+    "test:node": "chalk red bold 'go wasm only support browser!'",
+    "test:node:tiny": "node ./test/tiny.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hn-failte/go-wasm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hn-failte/go-wasm/issues"
+  },
+  "homepage": "https://github.com/hn-failte/go-wasm#readme",
+  "devDependencies": {
+    "chalk-cli": "^5.0.1",
+    "cross-env": "^7.0.3",
+    "http-server": "^14.1.1"
+  }
+}
