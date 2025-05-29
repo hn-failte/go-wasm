@@ -46,6 +46,17 @@ func goDiv(this js.Value, args []js.Value) interface{} {
 	return result
 }
 
+func goIntDiv(this js.Value, args []js.Value) interface{} {
+	if len(args) != 2 {
+		return "Invalid number of arguments. Expected 2."
+	}
+
+	num1 := args[0].Int()
+	num2 := args[1].Int()
+	result := num1 / num2
+	return result
+}
+
 func goMod(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
 		return "Invalid number of arguments. Expected 2."
@@ -78,6 +89,7 @@ func main() {
 	obj.Set("minus", js.FuncOf(goMinus))
 	obj.Set("multiply", js.FuncOf(goMultiply))
 	obj.Set("div", js.FuncOf(goDiv))
+	obj.Set("intDiv", js.FuncOf(goIntDiv))
 	obj.Set("mod", js.FuncOf(goMod))
 	// 挂载对象到全局
 	js.Global().Set("go", obj)
