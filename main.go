@@ -4,7 +4,8 @@ import "syscall/js"
 
 func goAdd(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Float()
@@ -15,7 +16,8 @@ func goAdd(this js.Value, args []js.Value) interface{} {
 
 func goMinus(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Float()
@@ -26,7 +28,8 @@ func goMinus(this js.Value, args []js.Value) interface{} {
 
 func goMultiply(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Float()
@@ -37,7 +40,8 @@ func goMultiply(this js.Value, args []js.Value) interface{} {
 
 func goDiv(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Float()
@@ -48,7 +52,8 @@ func goDiv(this js.Value, args []js.Value) interface{} {
 
 func goIntDiv(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Int()
@@ -59,7 +64,8 @@ func goIntDiv(this js.Value, args []js.Value) interface{} {
 
 func goMod(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Int()
@@ -70,7 +76,8 @@ func goMod(this js.Value, args []js.Value) interface{} {
 
 func gogogo(this js.Value, args []js.Value) interface{} {
 	if len(args) != 2 {
-		return "Invalid number of arguments. Expected 2."
+		js.Global().Get("Error").New("Invalid number of arguments. Expected 2.").Call("throw")
+		return nil
 	}
 
 	num1 := args[0].Int()
