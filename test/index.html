@@ -9,16 +9,28 @@
   <body>
     <script src="./wasm_exec.js"></script>
     <script>
-      const go = new Go()
-      WebAssembly.instantiateStreaming(
-        fetch('./main.wasm'),
-        go.importObject
-      ).then((res) => {
-        go.run(res.instance)
-        return res.instance
-      }).then(res => {
-        console.log('res', res)
-      })
+      ~(function() {
+        const go = new Go()
+        WebAssembly.instantiateStreaming(
+          fetch('./main.wasm'),
+          go.importObject
+        ).then((res) => {
+          go.run(res.instance)
+          return res.instance
+        }).then(res => {
+          console.log('res', res)
+        })
+      })()
+    </script>
+
+    <button onclick="clickgogogo()">
+      click
+    </button>
+
+    <script>
+      function clickgogogo () {
+        console.log(go.gogogo(3, 4))
+      }
     </script>
   </body>
 </html>

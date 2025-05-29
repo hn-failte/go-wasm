@@ -69,12 +69,18 @@ func gogogo(this js.Value, args []js.Value) interface{} {
 }
 
 func main() {
-	js.Global().Set("goAdd", js.FuncOf(goAdd))
-	js.Global().Set("goMinus", js.FuncOf(goMinus))
-	js.Global().Set("goMultiply", js.FuncOf(goMultiply))
-	js.Global().Set("goDiv", js.FuncOf(goDiv))
-	js.Global().Set("goMod", js.FuncOf(goMod))
+	// 挂载方法到全局
 	js.Global().Set("gogogo", js.FuncOf(gogogo))
+
+	// 设置对象的属性或方法
+	obj := js.Global().Get("Object").New()
+	obj.Set("add", js.FuncOf(goAdd))
+	obj.Set("minus", js.FuncOf(goMinus))
+	obj.Set("multiply", js.FuncOf(goMultiply))
+	obj.Set("div", js.FuncOf(goDiv))
+	obj.Set("mod", js.FuncOf(goMod))
+	// 挂载对象到全局
+	js.Global().Set("go", obj)
 	done := make(chan struct{}, 0)
 	<-done
 }
