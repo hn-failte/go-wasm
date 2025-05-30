@@ -24,12 +24,31 @@
     </script>
 
     <button onclick="clickgogogo()">
-      click
+      click gogogo
+    </button>
+
+    <button onclick="clickgodiv()">
+      click go div
+    </button>
+
+    <button onclick="clickgoIntdiv()">
+      click go int div
     </button>
 
     <script>
       function clickgogogo () {
-        console.log(go.gogogo(3, 4))
+        console.log('gogogo(3, 4) = ?')
+        console.log(window.gogogo(3, 4))
+      }
+
+      function clickgodiv () {
+        console.log('div(13, 3) = ?')
+        console.log(go.div(13, 3))
+      }
+
+      function clickgoIntdiv () {
+        console.log('intDiv(13, 3) = ?')
+        console.log(go.intDiv(13, 3))
       }
     </script>
   </body>
